@@ -1,14 +1,14 @@
 window.onload = function(){
   const canvasWidth = 900;
   const canvasHeight = 600;
-  const blockSize = 30; // en pixels
+  const blockSize = 30; 
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext('2d');
   const widthInBlocks = canvasWidth/blockSize; 
   const heightInBlocks = canvasHeight/blockSize;
   const centreX = canvasWidth / 2;
   const centreY = canvasHeight / 2;
-  let delay; // en millisecondes
+  let delay; 
   let snakee;
   let applee;
   let score;
@@ -26,7 +26,14 @@ window.onload = function(){
     document.body.appendChild(canvas);
     launch();
   }
-
+// Bouger la tete d'une case en fonction de la direction
+  
+      // Vérifier la collision avec les murs
+      // ...
+      // Signaler Game Over en cas de collision avec les murs
+  
+      // Vérifier la collision avec la food
+    
   function launch(){
     snakee = new Snake([[6,4],[5,4],[4,4],[3,4],[2,4]], "right");
     applee = new Apple([10, 10]);
@@ -58,7 +65,7 @@ window.onload = function(){
       timeout = setTimeout(refreshCanvas, delay);
     }
   }
-
+// ici c'est pour pouvoir afficher le game over et pour le modifier
   function gameOver(){
     ctx.save();
     ctx.font = "bold 70px sans-serif";
@@ -70,8 +77,8 @@ window.onload = function(){
     ctx.strokeText("Game Over", centreX, centreY - 180);
     ctx.fillText("Game Over", centreX, centreY - 180);
     ctx.font = "bold 30px sans-serif";
-    ctx.strokeText("Appuyer sur la touche espace pour rejouer", centreX, centreY - 120);
-    ctx.fillText("Appuyer sur la touche espace pour rejouer", centreX, centreY - 120);
+    ctx.strokeText("Appuyer sur la touche espace pour rejouer NEXT-U", centreX, centreY - 120);
+    ctx.fillText("Appuyer sur la touche espace pour rejouer NEXT-U", centreX, centreY - 120);
     ctx.restore();
   }
 
@@ -109,6 +116,7 @@ window.onload = function(){
       }
       ctx.restore();
     };
+      // Changer de direction en fonction de la touche appuyée
     this.advance = function(){
       const nextPosition = this.body[0].slice();
       switch(this.direction){
@@ -152,6 +160,8 @@ window.onload = function(){
         this.direction = newDirection;
       }
     };
+
+    // ici c'est pour que le serpend puisse soit manger le fruit ou sa soit se prendre le mur
     this.checkCollision = function(){
       let wallCollision = false;
       let snakeCollision = false;
