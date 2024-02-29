@@ -250,3 +250,17 @@ window.onload = function(){
   window.addEventListener('keydown', onkeyup);
 window.addEventListener('keyup', onkeydown);
 }
+
+/*        \\\||||||////
+            \\  ~ ~  //
+             (  @ @  )
+    ______ oOOo-(_)-oOOo___________
+    .......
+    .......
+    .......
+    _____________Oooo._____________
+       .oooO     (   )
+        (   )     ) /
+         \ (     (_/
+          \_)
+  */

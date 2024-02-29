@@ -17,13 +17,13 @@ body {
 .snake-part {
     width: 20px;
     height: 20px;
-    background-color: #00f;
+    background-color: rgb(255, 0, 0);
     position: absolute;
 }
 
 .food {
     width: 20px;
     height: 20px;
-    background-color: #f00;
+    background-color: rgb(47, 255, 0);
     position: absolute;
 }
